@@ -14,6 +14,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { LoginComponent } from './login/login.component';
 import { MatIconModule } from '@angular/material/icon';
+import { AdminGuard } from 'src/guards/admin-guard.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatExpansionModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [AdminGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
