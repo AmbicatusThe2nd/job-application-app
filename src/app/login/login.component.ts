@@ -25,7 +25,15 @@ export class LoginComponent implements OnInit {
 
   ngOnSubmit(): void {
     if (this.loginForm.valid) {
-      sessionStorage.setItem('jeAdmin', JSON.stringify(true));
+      const expirationDate = new Date();
+      expirationDate.setDate(expirationDate.getDate() + 1); // Expires in 1 day
+
+      const jeAdminItem = {
+        value: true,
+        expiresAt: expirationDate.getTime(),
+      };
+
+      sessionStorage.setItem('jeAdmin', JSON.stringify(jeAdminItem));
       this.router.navigate(['/admin']);
     }
   }
