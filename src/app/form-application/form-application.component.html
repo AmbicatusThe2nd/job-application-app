@@ -1,22 +1,22 @@
 <div class="form">
   <h1>Prošnja za delo</h1>
-  <form>
+  <form [formGroup]="submitionForm" (submit)="ngOnSubmit()">
     <div class="form-container">
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>Ime</mat-label>
-        <input matInput />
+        <input matInput formControlName="firstname" />
       </mat-form-field>
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>Priimek</mat-label>
-        <input matInput />
+        <input matInput formControlName="lastname" />
       </mat-form-field>
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>Naslov</mat-label>
-        <input matInput />
+        <input matInput formControlName="address" />
       </mat-form-field>
       <mat-form-field class="form-field" appearance="outline">
         <mat-label> Motivacijsko pismo </mat-label>
-        <textarea matInput></textarea>
+        <textarea matInput formControlName="motivationalLetter"></textarea>
       </mat-form-field>
       <button mat-raised-button color="primary">Dodaj</button>
     </div>
