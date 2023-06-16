@@ -1,0 +1,19 @@
+<div class="admin">
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+      *ngFor="let submition of allSubmissions"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ submition.firstName }} {{ submition.lastName }}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ submition.address }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{ submition.motivationalLetter }}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

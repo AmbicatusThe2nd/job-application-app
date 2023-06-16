@@ -10,9 +10,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SuccessMessageComponent } from './success-message/success-message.component';
+import { AdminComponent } from './admin/admin.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
-  declarations: [AppComponent, FormApplicationComponent, SuccessMessageComponent],
+  declarations: [
+    AppComponent,
+    FormApplicationComponent,
+    SuccessMessageComponent,
+    AdminComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,6 +28,7 @@ import { SuccessMessageComponent } from './success-message/success-message.compo
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
