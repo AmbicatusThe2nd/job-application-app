@@ -9,9 +9,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SuccessMessageComponent } from './success-message/success-message.component';
 
 @NgModule({
-  declarations: [AppComponent, FormApplicationComponent],
+  declarations: [AppComponent, FormApplicationComponent, SuccessMessageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
