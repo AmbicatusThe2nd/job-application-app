@@ -28,7 +28,23 @@ export class FormApplicationComponent implements OnInit {
         motivationalLetter: this.submitionForm.get('motivationalLetter')?.value,
       };
 
-      console.log(newSubmition); // Dummy submition
+      this.saveSubmition(newSubmition);
+    }
+  }
+
+  private saveSubmition(submition: FromModel): void {
+    const allSubmitions = localStorage.getItem('jobSubmitions');
+
+    if (allSubmitions) {
+      const parsedSubmition = JSON.parse(allSubmitions);
+
+      parsedSubmition.push(submition);
+
+      localStorage.setItem('jobSubmitions', JSON.stringify(parsedSubmition));
+    } else {
+      const initialSubmition = [submition];
+
+      localStorage.setItem('jobSubmitions', JSON.stringify(initialSubmition));
     }
   }
 }
