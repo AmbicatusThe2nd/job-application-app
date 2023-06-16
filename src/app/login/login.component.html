@@ -1,0 +1,29 @@
+<div class="form">
+  <h1>Prijava</h1>
+  <form [formGroup]="loginForm" (submit)="ngOnSubmit()">
+    <div class="login-form-container">
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Uporabniško ime</mat-label>
+        <input matInput formControlName="username" />
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Geslo</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          [type]="hide ? 'password' : 'text'"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button mat-raised-button color="primary">Prijava</button>
+    </div>
+  </form>
+</div>

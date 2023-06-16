@@ -12,6 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SuccessMessageComponent } from './success-message/success-message.component';
 import { AdminComponent } from './admin/admin.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { LoginComponent } from './login/login.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     FormApplicationComponent,
     SuccessMessageComponent,
     AdminComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatExpansionModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

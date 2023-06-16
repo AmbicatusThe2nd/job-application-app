@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormApplicationComponent } from './form-application/form-application.component';
 import { SuccessMessageComponent } from './success-message/success-message.component';
 import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'application', pathMatch: 'full' },
   { path: 'application', component: FormApplicationComponent },
   { path: 'application/success', component: SuccessMessageComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

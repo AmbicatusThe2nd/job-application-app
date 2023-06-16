@@ -1,0 +1,14 @@
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-field {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-field:last-child {
+  margin-right: 0;
+}
