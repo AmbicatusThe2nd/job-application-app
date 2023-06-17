@@ -8,6 +8,7 @@ import { FromModel } from 'src/models/Form.model';
 })
 export class AdminComponent implements OnInit {
   panelOpenState = false;
+  public sliderValue: number = 0;
   public allSubmissions: FromModel[] = [];
 
   constructor() {}
@@ -18,6 +19,10 @@ export class AdminComponent implements OnInit {
       this.allSubmissions = JSON.parse(submissions);
     }
     console.log(this.allSubmissions);
+  }
+
+  changeValue(event: any) {
+    this.sliderValue = event.value;
   }
 
   public formatLabel(value: number): string {

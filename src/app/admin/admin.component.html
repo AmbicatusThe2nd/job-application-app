@@ -15,17 +15,11 @@
       </mat-expansion-panel-header>
       <p>{{ submition.motivationalLetter }}</p>
       <p>
-        <mat-slider
-          min="0"
-          max="5"
-          step="1"
-          showTickMarks
-          discrete
-          [displayWith]="formatLabel"
-        >
+        <mat-slider min="0" max="5" step="1" (input)="changeValue($event)">
           <input matSliderThumb />
         </mat-slider>
       </p>
+      <p>{{ this.sliderValue }} / 5</p>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
