@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         expiresAt: expirationDate.getTime(),
       };
 
-      sessionStorage.setItem('jeAdmin', JSON.stringify(jeAdminItem));
+      localStorage.setItem('jeAdmin', JSON.stringify(jeAdminItem));
       this.router.navigate(['/admin']);
     }
   }
