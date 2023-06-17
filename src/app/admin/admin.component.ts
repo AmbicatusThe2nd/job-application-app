@@ -19,14 +19,10 @@ export class AdminComponent implements OnInit {
     if (submissions) {
       this.allSubmissions = JSON.parse(submissions);
     }
-    console.log(this.allSubmissions);
   }
 
   changeValue(event: MatSliderChange, index: number) {
     this.allSubmissions[index].rating = event.value;
-  }
-
-  public formatLabel(value: number): string {
-    return `${value}`;
+    localStorage.setItem('jobSubmitions', JSON.stringify(this.allSubmissions));
   }
 }
