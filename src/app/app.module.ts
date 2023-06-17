@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AdminGuard } from 'src/guards/admin-guard.service';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     SuccessMessageComponent,
     AdminComponent,
     LoginComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,

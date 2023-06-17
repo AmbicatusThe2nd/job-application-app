@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSliderChange } from '@angular/material/slider';
 import { PageEvent } from '@angular/material/paginator';
 import { MatPaginator } from '@angular/material/paginator';
 import { FromModel } from 'src/models/Form.model';
@@ -40,14 +39,13 @@ export class AdminComponent implements OnInit {
     this.updatePagedSubmissions();
   }
 
-  changeValue(event: MatSliderChange, index: number) {
+  changeValue(value: number, index: number) {
     const pagedSubmission = this.pagedSubmissions[index];
-    pagedSubmission.rating = event.value;
+    pagedSubmission.rating = value;
 
     const allSubmissionIndex = this.allSubmissions.indexOf(pagedSubmission);
-
     if (allSubmissionIndex > -1) {
-      this.allSubmissions[allSubmissionIndex].rating = event.value;
+      this.allSubmissions[allSubmissionIndex].rating = value;
     }
 
     localStorage.setItem('jobSubmitions', JSON.stringify(this.allSubmissions));

@@ -15,15 +15,11 @@
       </mat-expansion-panel-header>
       <p>{{ submition.motivationalLetter }}</p>
       <p>
-        <mat-slider
-          min="0"
-          max="5"
-          step="1"
+        <app-rating
           [value]="pagedSubmissions[i].rating"
-          (input)="changeValue($event, i)"
+          (valueChange)="changeValue($event, i)"
         >
-          <input matSliderThumb />
-        </mat-slider>
+        </app-rating>
       </p>
       <p>Ocena: {{ this.pagedSubmissions[i].rating }} / 5</p>
     </mat-expansion-panel>
