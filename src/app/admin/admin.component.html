@@ -14,6 +14,18 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <p>{{ submition.motivationalLetter }}</p>
+      <p>
+        <mat-slider
+          min="0"
+          max="5"
+          step="1"
+          showTickMarks
+          discrete
+          [displayWith]="formatLabel"
+        >
+          <input matSliderThumb />
+        </mat-slider>
+      </p>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

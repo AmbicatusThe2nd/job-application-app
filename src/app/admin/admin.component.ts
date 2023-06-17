@@ -19,4 +19,8 @@ export class AdminComponent implements OnInit {
     }
     console.log(this.allSubmissions);
   }
+
+  public formatLabel(value: number): string {
+    return `${value}`;
+  }
 }

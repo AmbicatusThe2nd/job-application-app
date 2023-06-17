@@ -15,6 +15,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { LoginComponent } from './login/login.component';
 import { MatIconModule } from '@angular/material/icon';
 import { AdminGuard } from 'src/guards/admin-guard.service';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AdminGuard } from 'src/guards/admin-guard.service';
     ReactiveFormsModule,
     MatExpansionModule,
     MatIconModule,
+    MatSliderModule,
   ],
   providers: [AdminGuard],
   bootstrap: [AppComponent],
