@@ -21,8 +21,9 @@ export class AdminComponent implements OnInit {
     console.log(this.allSubmissions);
   }
 
-  changeValue(event: any) {
-    this.sliderValue = event.value;
+  // Give it so that the slider value is binded directly to the property
+  changeValue(event: any, index: number) {
+    this.allSubmissions[index].rating = event.value;
   }
 
   public formatLabel(value: number): string {

@@ -26,6 +26,7 @@ export class FormApplicationComponent implements OnInit {
         lastName: this.submitionForm.get('lastname')?.value,
         address: this.submitionForm.get('address')?.value,
         motivationalLetter: this.submitionForm.get('motivationalLetter')?.value,
+        rating: 0,
       };
 
       this.saveSubmition(newSubmition);

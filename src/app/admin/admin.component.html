@@ -3,7 +3,7 @@
     <mat-expansion-panel
       (opened)="panelOpenState = true"
       (closed)="panelOpenState = false"
-      *ngFor="let submition of allSubmissions"
+      *ngFor="let submition of allSubmissions; let i = index"
     >
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -15,11 +15,11 @@
       </mat-expansion-panel-header>
       <p>{{ submition.motivationalLetter }}</p>
       <p>
-        <mat-slider min="0" max="5" step="1" (input)="changeValue($event)">
+        <mat-slider min="0" max="5" step="1" (input)="changeValue($event, i)">
           <input matSliderThumb />
         </mat-slider>
       </p>
-      <p>{{ this.sliderValue }} / 5</p>
+      <p>Ocena: {{ this.allSubmissions[i].rating }} / 5</p>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
