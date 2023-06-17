@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { MatIconModule } from '@angular/material/icon';
 import { AdminGuard } from 'src/guards/admin-guard.service';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatSliderModule } from '@angular/material/slider';
     MatExpansionModule,
     MatIconModule,
     MatSliderModule,
+    MatPaginatorModule,
   ],
   providers: [AdminGuard],
   bootstrap: [AppComponent],

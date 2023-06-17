@@ -28,4 +28,11 @@
       <p>Ocena: {{ this.allSubmissions[i].rating }} / 5</p>
     </mat-expansion-panel>
   </mat-accordion>
+  <mat-paginator
+    *ngIf="allSubmissions.length > 5"
+    [length]="allSubmissions.length"
+    [pageSize]="5"
+    aria-label="Select page"
+  >
+  </mat-paginator>
 </div>
