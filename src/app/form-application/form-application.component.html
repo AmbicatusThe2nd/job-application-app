@@ -4,19 +4,39 @@
     <div class="form-container">
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>Ime</mat-label>
-        <input matInput formControlName="firstname" />
+        <input
+          matInput
+          formControlName="firstname"
+          [errorStateMatcher]="matcher"
+        />
+        <mat-error> Prosim vnesite ime </mat-error>
       </mat-form-field>
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>Priimek</mat-label>
-        <input matInput formControlName="lastname" />
+        <input
+          matInput
+          formControlName="lastname"
+          [errorStateMatcher]="matcher"
+        />
+        <mat-error> Prosim vnesite priimek </mat-error>
       </mat-form-field>
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>Naslov</mat-label>
-        <input matInput formControlName="address" />
+        <input
+          matInput
+          formControlName="address"
+          [errorStateMatcher]="matcher"
+        />
+        <mat-error> Prosim vnesite naslov </mat-error>
       </mat-form-field>
       <mat-form-field class="form-field" appearance="outline">
         <mat-label> Motivacijsko pismo </mat-label>
-        <textarea matInput formControlName="motivationalLetter"></textarea>
+        <textarea
+          matInput
+          formControlName="motivationalLetter"
+          [errorStateMatcher]="matcher"
+        ></textarea>
+        <mat-error> Prosim vnesite motivacijsko pismo </mat-error>
       </mat-form-field>
       <button mat-raised-button color="primary">Dodaj</button>
     </div>

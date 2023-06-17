@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FromModel } from 'src/models/Form.model';
+import { MyErrorStateMatcher } from 'src/helpers/ErrorStateMatcher';
 
 @Component({
   selector: 'app-form-application',
@@ -17,6 +18,8 @@ export class FormApplicationComponent implements OnInit {
     address: new FormControl('', [Validators.required]),
     motivationalLetter: new FormControl('', [Validators.required]),
   });
+
+  matcher = new MyErrorStateMatcher();
 
   ngOnInit(): void {}
 
