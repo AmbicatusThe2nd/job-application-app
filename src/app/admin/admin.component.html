@@ -3,7 +3,7 @@
     <mat-expansion-panel
       (opened)="panelOpenState = true"
       (closed)="panelOpenState = false"
-      *ngFor="let submition of allSubmissions; let i = index"
+      *ngFor="let submition of pagedSubmissions; let i = index"
     >
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -19,13 +19,13 @@
           min="0"
           max="5"
           step="1"
-          [value]="allSubmissions[i].rating"
+          [value]="pagedSubmissions[i].rating"
           (input)="changeValue($event, i)"
         >
           <input matSliderThumb />
         </mat-slider>
       </p>
-      <p>Ocena: {{ this.allSubmissions[i].rating }} / 5</p>
+      <p>Ocena: {{ this.pagedSubmissions[i].rating }} / 5</p>
     </mat-expansion-panel>
   </mat-accordion>
   <mat-paginator
@@ -33,6 +33,7 @@
     [length]="allSubmissions.length"
     [pageSize]="5"
     aria-label="Select page"
+    (page)="onPageChange($event)"
   >
   </mat-paginator>
 </div>

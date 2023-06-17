@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSliderChange } from '@angular/material/slider';
+import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 import { FromModel } from 'src/models/Form.model';
 
 @Component({
@@ -8,9 +10,10 @@ import { FromModel } from 'src/models/Form.model';
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent implements OnInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   panelOpenState = false;
-  public sliderValue: number = 0;
   public allSubmissions: FromModel[] = [];
+  public pagedSubmissions: FromModel[] = [];
 
   constructor() {}
 
@@ -19,6 +22,22 @@ export class AdminComponent implements OnInit {
     if (submissions) {
       this.allSubmissions = JSON.parse(submissions);
     }
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.updatePagedSubmissions();
+    });
+  }
+
+  updatePagedSubmissions() {
+    const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
+    const endIndex = startIndex + this.paginator.pageSize;
+    this.pagedSubmissions = this.allSubmissions.slice(startIndex, endIndex);
+  }
+
+  onPageChange(event: PageEvent) {
+    this.updatePagedSubmissions();
   }
 
   changeValue(event: MatSliderChange, index: number) {
