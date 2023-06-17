@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSliderChange } from '@angular/material/slider';
 import { FromModel } from 'src/models/Form.model';
 
 @Component({
@@ -21,8 +22,7 @@ export class AdminComponent implements OnInit {
     console.log(this.allSubmissions);
   }
 
-  // Give it so that the slider value is binded directly to the property
-  changeValue(event: any, index: number) {
+  changeValue(event: MatSliderChange, index: number) {
     this.allSubmissions[index].rating = event.value;
   }
 
