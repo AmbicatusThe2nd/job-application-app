@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MyErrorStateMatcher } from 'src/helpers/ErrorStateMatcher';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,8 @@ export class LoginComponent implements OnInit {
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
+
+  matcher = new MyErrorStateMatcher();
 
   ngOnInit(): void {
     if (sessionStorage.getItem('jeAdmin')) {

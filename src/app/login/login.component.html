@@ -4,24 +4,21 @@
     <div class="login-form-container">
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>Uporabniško ime</mat-label>
-        <input matInput formControlName="username" />
+        <input
+          matInput
+          formControlName="username"
+          [errorStateMatcher]="matcher"
+        />
+        <mat-error> Prosim vnesite uporabniško ime </mat-error>
       </mat-form-field>
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>Geslo</mat-label>
         <input
           matInput
           formControlName="password"
-          [type]="hide ? 'password' : 'text'"
+          [errorStateMatcher]="matcher"
         />
-        <button
-          mat-icon-button
-          matSuffix
-          (click)="hide = !hide"
-          [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide"
-        >
-          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-        </button>
+        <mat-error> Prosim vnesite geslo </mat-error>
       </mat-form-field>
       <button mat-raised-button color="primary">Prijava</button>
     </div>
