@@ -15,7 +15,13 @@
       </mat-expansion-panel-header>
       <p>{{ submition.motivationalLetter }}</p>
       <p>
-        <mat-slider min="0" max="5" step="1" (input)="changeValue($event, i)">
+        <mat-slider
+          min="0"
+          max="5"
+          step="1"
+          [value]="allSubmissions[i].rating"
+          (input)="changeValue($event, i)"
+        >
           <input matSliderThumb />
         </mat-slider>
       </p>
