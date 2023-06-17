@@ -41,7 +41,15 @@ export class AdminComponent implements OnInit {
   }
 
   changeValue(event: MatSliderChange, index: number) {
-    this.allSubmissions[index].rating = event.value;
+    const pagedSubmission = this.pagedSubmissions[index];
+    pagedSubmission.rating = event.value;
+
+    const allSubmissionIndex = this.allSubmissions.indexOf(pagedSubmission);
+
+    if (allSubmissionIndex > -1) {
+      this.allSubmissions[allSubmissionIndex].rating = event.value;
+    }
+
     localStorage.setItem('jobSubmitions', JSON.stringify(this.allSubmissions));
   }
 }
