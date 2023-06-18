@@ -1,4 +1,4 @@
-<div class="form">
+<div class="form-container">
   <h1>Prošnja za delo</h1>
   <form [formGroup]="submitionForm" (submit)="ngOnSubmit()">
     <div class="form-container">
@@ -35,6 +35,7 @@
           matInput
           formControlName="motivationalLetter"
           [errorStateMatcher]="matcher"
+          class="textarea"
         ></textarea>
         <mat-error> Prosim vnesite motivacijsko pismo </mat-error>
       </mat-form-field>
