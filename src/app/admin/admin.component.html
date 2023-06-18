@@ -32,4 +32,22 @@
     (page)="onPageChange($event)"
   >
   </mat-paginator>
+  <div class="admin__buttons">
+    <button
+      class="button-spacing"
+      mat-raised-button
+      color="primary"
+      (click)="onBackClick()"
+    >
+      Nazaj
+    </button>
+    <button
+      class="button-spacing"
+      mat-raised-button
+      color="accent"
+      (click)="onLogoutClick()"
+    >
+      Odjava
+    </button>
+  </div>
 </div>
